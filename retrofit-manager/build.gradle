@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdk 30
+
+    defaultConfig {
+        minSdk 19
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+ext {
+    retrofitVersion = "2.5.0"
+    okhttpVersion = "3.14.4"
+    moshiVersion = "1.6.0"
+    rxjavaVersion = "2.2.8"
+    rxandroidVersion = "2.1.1"
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    // retrofit
+    api("com.squareup.retrofit2:retrofit:${retrofitVersion}") {
+        // exclude Retrofit’s OkHttp peer-dependency module and define your own module import
+        exclude module: 'okhttp'
+    }
+    api "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}"
+    // okhttp
+    api "com.squareup.okhttp3:okhttp:${okhttpVersion}"
+    implementation "com.squareup.moshi:moshi:${moshiVersion}"
+    // rxjava
+    api "io.reactivex.rxjava2:rxjava:${rxjavaVersion}"
+    api "io.reactivex.rxjava2:rxandroid:${rxandroidVersion}"
+    api 'com.google.code.gson:gson:2.8.6'
+}
