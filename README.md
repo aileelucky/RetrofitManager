@@ -1,5 +1,7 @@
 # Retrofit Manager
 
+[![](https://jitpack.io/v/aileelucky/RetrofitManager.svg)](https://jitpack.io/#aileelucky/RetrofitManager)
+
 对 [Retrofit][1] 的使用进行封装，对一些情况进行统一处理，方便复用。
 
 * 统一处理 status 的判断，并在自定义接口中回调

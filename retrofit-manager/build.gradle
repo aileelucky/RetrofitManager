@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    compileSdk 30
+    compileSdkVersion 28
 
     defaultConfig {
-        minSdk 19
-        targetSdk 30
+        minSdkVersion 18
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
 
