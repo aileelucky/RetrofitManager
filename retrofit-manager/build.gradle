@@ -27,11 +27,11 @@ android {
     }
 }
 ext {
-    retrofitVersion = "2.5.0"
-    okhttpVersion = "3.14.4"
+    retrofitVersion = "2.4.0"
+    okhttpVersion = "3.11.0"
     moshiVersion = "1.6.0"
-    rxjavaVersion = "2.2.8"
-    rxandroidVersion = "2.1.1"
+    rxjavaVersion = "2.2.2"
+    rxandroidVersion = "2.1.0"
 }
 
 dependencies {
